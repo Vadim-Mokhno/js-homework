@@ -3,7 +3,6 @@
 console.log('Mokhno');
 
 // Task 3
-console.log('Task 3');
 let variableOne = 1;
 let variableTwo = 2;
 alert(
@@ -53,8 +52,6 @@ console.log(`uninitializedVariable is of type ${typeof uninitializedVariable}
 nullishVariable is of type ${typeof nullishVariable}`);
 
 // Task 7
-console.log('Task 7');
-
 const userLogin = prompt('Enter you login');
 const userEmail = prompt('Enter you email');
 const userPassword = prompt('Enter you password');
@@ -64,8 +61,6 @@ alert(
 );
 
 // Task 8
-console.log('Task 8');
-
 const secondsInMinute = 60;
 const minutesInHour = 60;
 const hoursInDay = 24;
