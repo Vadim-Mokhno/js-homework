@@ -6,13 +6,13 @@ console.log('Mokhno');
 console.log('Task 3');
 let variableOne = 1;
 let variableTwo = 2;
-console.log(
+alert(
   `After initialization: variableOne: ${variableOne}, variableTwo: ${variableTwo} `
 );
 
 variableOne = variableTwo;
 
-console.log(
+alert(
   `After assignment: variableOne: ${variableOne}, variableTwo: ${variableTwo} `
 );
 
@@ -59,7 +59,7 @@ const userLogin = prompt('Enter you login');
 const userEmail = prompt('Enter you email');
 const userPassword = prompt('Enter you password');
 
-console.log(
+alert(
   `Dear ${userLogin}, your email is ${userEmail}, your password is ${userPassword}`
 );
 
