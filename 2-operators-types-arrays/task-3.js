@@ -9,4 +9,4 @@ if (isAdult) {
   resultMessage += 'You are too young!';
 }
 
-console.log(resultMessage);
+alert(resultMessage);
