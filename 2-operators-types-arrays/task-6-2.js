@@ -3,9 +3,9 @@ console.log('initial array: [' + arr + ']');
 
 let biggestNumberOfEntries = 0;
 
-const mostFrequentNumberInArray = arr.reduce((mostFrequentNumberInArray, currentElement, index, array) => {
+const mostFrequentNumberInArray = arr.reduce((mostFrequentNumberInArray, currentElement, currentIndex, array) => {
   let numberOfEntriesForCurrenElement =
-    array.indexOf(currentElement) < index
+    array.indexOf(currentElement) < currentIndex
       ? -1
       : array.filter(el => el === currentElement).length;
 
