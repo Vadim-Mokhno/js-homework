@@ -1,34 +1,34 @@
-const isInputInvalid = function (startValue, endValue) {
-  if (
-    typeof startValue !== typeof endValue ||
-    (typeof startValue !== 'number' && typeof startValue !== 'string') ||
-    (typeof startValue === 'string' &&
-      (startValue.length > 1 || endValue.length > 1)) ||
-    startValue > endValue
-  ) {
-    return true;
-  } else {
-    return false;
+const sumSliceArray = function (array, first, second) {
+  if (!Array.isArray(array)) {
+    throw new TypeError('first argument must be an array');
   }
+
+  if (typeof first !== 'number' || typeof second !== 'number') {
+    throw new TypeError('indexes in array must numbers');
+  }
+
+  if (first < 0 || first >= array.length) {
+    throw new RangeError('first index is out of range');
+  }
+
+  if (second < 0 || second >= array.length) {
+    throw new RangeError('second index is out of range');
+  }
+
+  return array[first] + array[second];
 };
 
-const createArray = function (startValue, endValue) {
-  if (isInputInvalid(startValue, endValue)) {
-    console.error('Invalid input');
-    return null;
-  }
-
-  const resultArray = new Array();
-
-  for (let nextValue = startValue; nextValue <= endValue; ) {
-    resultArray.push(nextValue);
-    nextValue =
-      typeof startValue === 'number'
-        ? nextValue + 1
-        : String.fromCharCode(nextValue.charCodeAt(0) + 1);
-  }
-
-  return resultArray;
-};
-
-console.log(createArray(2, 9));
+try {
+  const array = [2, 4, null, 65, 78, 34, 4, 56, 55, true, 77, undefined, {}];
+  const firstElementIndex = 4;
+  const secondElementIndex = -2;
+  console.log(
+    `${array[firstElementIndex]} + ${
+      array[secondElementIndex]
+    } = ${sumSliceArray(array, firstElementIndex, secondElementIndex)}`
+  );
+} catch (e) {
+  console.error(e.name);
+  console.error(e.message);
+  console.error(e.stack);
+}
