@@ -5,10 +5,10 @@ const sortElementsInArrayByType = function (inputArray) {
   }
 
   const sortedArray = new Array();
-  const sortMultiDimensionalArrayByType = function (array) {
+  const sortArrayByType = function (array) {
     for (let element of array) {
       if (Array.isArray(element)) {
-        sortMultiDimensionalArrayByType(element);
+        sortArrayByType(element);
       } else {
         addElementToSortedArray(element);
       }
@@ -29,7 +29,7 @@ const sortElementsInArrayByType = function (inputArray) {
     }
   };
 
-  sortMultiDimensionalArrayByType(inputArray);
+  sortArrayByType(inputArray);
 
   return sortedArray;
 };
