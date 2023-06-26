@@ -1,79 +1,83 @@
-const sortElementsByType = function (inputArray) {
+const sortElementsInArrayByType = function (inputArray) {
   if (!Array.isArray(inputArray) || inputArray.length === 0) {
     console.error('Invalid input');
     return null;
   }
 
-  const outputArray = new Array();
-
-  for (let elementOfInputArray of inputArray) {
-    let isElementAdded = false;
-
-    if (Array.isArray(elementOfInputArray)) {
-      for (let arrayOfValues of sortElementsByType(elementOfInputArray)) {
-        isElementAdded = false;
-
-        for (let elementOfOutputArray of outputArray) {
-          if (typeof arrayOfValues[0] === typeof elementOfOutputArray[0]) {
-            elementOfOutputArray.push(...arrayOfValues);
-            isElementAdded = true;
-            break;
-          }
-        }
-
-        if (!isElementAdded) {
-          outputArray.push([...arrayOfValues]);
-        }
+  const sortedArray = new Array();
+  const sortMultiDimensionalArrayByType = function (array) {
+    for (let element of array) {
+      if (Array.isArray(element)) {
+        sortMultiDimensionalArrayByType(element);
+      } else {
+        addElementToSortedArray(element);
       }
-      continue;
     }
-
-    for (let elementOfOutputArray of outputArray) {
-      if (typeof elementOfOutputArray[0] === typeof elementOfInputArray) {
-        elementOfOutputArray.push(elementOfInputArray);
+  };
+  const addElementToSortedArray = function (element) {
+    let isElementAdded = false;
+    for (let elementOfSortedArray of sortedArray) {
+      if (typeof elementOfSortedArray[0] === typeof element) {
+        elementOfSortedArray.push(element);
         isElementAdded = true;
         break;
       }
     }
 
     if (!isElementAdded) {
-      outputArray.push([elementOfInputArray]);
+      sortedArray.push([element]);
     }
-  }
-  return outputArray;
+  };
+
+  sortMultiDimensionalArrayByType(inputArray);
+
+  return sortedArray;
 };
 
-// console.log(
-//   sortElementsByType([
-//     [2, [true, { n: 0 }, [3, 5555555]]],
-//     5,
-//     'Limit',
-//     12,
-//     'a',
-//     '3',
-//     false,
-//     99,
-//     2,
-//     [
-//       2,
-//       4,
-//       undefined,
-//       { s: '44' },
-//       3,
-//       '33',
-//       'a',
-//       [77777, 'rrrrrrr', [2888, null, 50000, { n: 1 }], 'ssss'],
-//       'text',
-//     ],
-//     'strong',
-//     'broun',
-//     { n: 2 },
-//     ['trtrt', 666, { w: 55 }],
-//   ])
-// );
+console.log(
+  sortElementsInArrayByType([
+    [2, [true, { n: 0 }, [3, 5555555]]],
+    5,
+    'Limit',
+    12,
+    'a',
+    '3',
+    false,
+    99,
+    2,
+    [
+      2,
+      4,
+      undefined,
+      { s: '44' },
+      3,
+      '33',
+      'a',
+      [
+        77777,
+        'rrrrrrr',
+        [
+          2888,
+          null,
+          [undefined, null, ['innermost'], undefined],
+          50000,
+          { n: 1 },
+        ],
+        'ssss',
+      ],
+      'text',
+    ],
+    'strong',
+    'broun',
+    { n: 2 },
+    ['trtrt', 666, { w: 55 }],
+  ])
+);
+
+console.log('-------------------');
 
 console.log(
-  sortElementsByType([
+  sortElementsInArrayByType([
     5,
     'Limit',
     12,
