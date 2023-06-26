@@ -1,4 +1,9 @@
 const sortElementsByType = function (inputArray) {
+  if (!Array.isArray(inputArray) || inputArray.length === 0) {
+    console.error('Invalid input');
+    return null;
+  }
+
   const outputArray = new Array();
 
   for (let elementOfInputArray of inputArray) {

@@ -1,4 +1,9 @@
 const calc = function (a, b, op) {
+  if (typeof a !== 'number' || typeof b !== 'number' || !Number.isInteger(op)) {
+    console.error('Invalid input');
+    return null;
+  }
+
   switch (op) {
     case 1:
       return a - b;
@@ -11,4 +16,4 @@ const calc = function (a, b, op) {
   }
 };
 
-console.log(calc(10, 3, 999));
+console.log(calc(10.2, 2, 3));
