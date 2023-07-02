@@ -14,9 +14,9 @@ function calculateShoePrice() {
   removeClassActive(elements);
   this.classList.add('active');
   priceElement.textContent = (
-    parseFloat(getActiveElement('color').getAttribute('data-price')) *
-    parseFloat(getActiveElement('shoe-size').getAttribute('data-price')) *
-    parseFloat(getActiveElement('material').getAttribute('data-price'))
+    parseFloat(getActiveElement(colorElements).getAttribute('data-price')) *
+    parseFloat(getActiveElement(shoeSizeElements).getAttribute('data-price')) *
+    parseFloat(getActiveElement(materialElements).getAttribute('data-price'))
   ).toFixed(2);
 }
 
@@ -29,23 +29,7 @@ function removeClassActive(elements) {
   }
 }
 
-function getActiveElement(className) {
-  let elements;
-
-  switch (className) {
-    case 'shoe-size':
-      elements = shoeSizeElements;
-      break;
-    case 'material':
-      elements = materialElements;
-      break;
-    case 'color':
-      elements = colorElements;
-      break;
-    default:
-      elements = null;
-  }
-
+function getActiveElement(elements) {
   for (const element of elements) {
     if (element.classList.contains('active')) {
       return element;
