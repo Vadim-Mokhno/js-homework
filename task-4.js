@@ -40,7 +40,7 @@ class RefillableMarker extends Marker {
   }
 
   refill(inkQuantity) {
-    this.inkQuantity = inkQuantity;
+    this.inkQuantity += inkQuantity;
   }
 }
 
