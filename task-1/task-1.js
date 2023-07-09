@@ -1,7 +1,6 @@
 const createWindowButton = document.querySelector('.create-window');
 
 createWindowButton.addEventListener('click', function () {
-  const popupWindow = window.open('', '', 'popup');
   const resizingTimeDelay = 2000;
   const movingTimeDelay = 4000;
   const closingTimeDelay = 6000;
@@ -11,8 +10,11 @@ createWindowButton.addEventListener('click', function () {
   const newHeight = 500;
   const newCoordinateX = 200;
   const newCoordinateY = 200;
-
-  popupWindow.resizeTo(initialWidth, initialHeight);
+  const popupWindow = window.open(
+    '',
+    '',
+    `width=${initialWidth},height=${initialHeight}`
+  );
 
   window.setTimeout(
     () => popupWindow.resizeTo(newWidth, newHeight),
