@@ -1,0 +1,17 @@
+body {
+  width: 90%;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-window {
+  padding: 20px 50px;
+  border-radius: 15px;
+  border: none;
+  color: #fff;
+  background-color: #ff00ff;
+  font-size: 20px;
+  cursor: pointer;
+}
