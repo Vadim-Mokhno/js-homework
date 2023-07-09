@@ -1,0 +1,8 @@
+.select-form {
+  width: 200px;
+  padding: 10px 7px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border: solid 2px #777;
+}
