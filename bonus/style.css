@@ -1,0 +1,143 @@
+.container {
+  width: 70%;
+  margin: auto;
+  background-color: #bbb;
+  height: 85vh;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.selection-area {
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.personage-image {
+  width: 150px;
+  height: 130px;
+  background-image: url('images/personages.png');
+}
+
+.right-arrow,
+.left-arrow {
+  cursor: pointer;
+}
+
+.column-1 {
+  background-position-x: -95px;
+}
+
+.column-2 {
+  background-position-x: -290px;
+}
+
+.column-3 {
+  background-position-x: -480px;
+}
+
+.column-4 {
+  background-position-x: -685px;
+}
+
+.column-5 {
+  background-position-x: -860px;
+}
+
+.row-1 {
+  background-position-y: -80px;
+}
+
+.row-2 {
+  background-position-y: -260px;
+}
+
+.row-3 {
+  background-position-y: -440px;
+}
+
+.gameboard {
+  position: relative;
+  height: 70%;
+  background-color: #ffaaff;
+  border: 5px solid #aaffbb;
+}
+
+.personage {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 150px;
+  height: 130px;
+  background-image: url('images/personages.png');
+}
+
+.start-btn {
+  position: absolute;
+  top: 7%;
+  right: 5%;
+  width: 15%;
+  padding: 10px 20px;
+  background-color: #dd1145;
+  border: none;
+  color: whitesmoke;
+  font-size: 22px;
+  font-family: 'Comic Sans MS';
+  letter-spacing: 1px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.reset-btn {
+  position: absolute;
+  top: 18%;
+  right: 5%;
+  width: 15%;
+  padding: 10px 20px;
+  background-color: #3355ff;
+  border: none;
+  color: whitesmoke;
+  font-size: 22px;
+  font-family: 'Comic Sans MS';
+  letter-spacing: 1px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.start-btn-disabled {
+  background-color: #777;
+}
+.speed-selection-form {
+  position: absolute;
+  left: 17px;
+  top: 27px;
+  font-family: 'Comic Sans MS';
+}
+
+.speed-selection-form ul {
+  list-style: none;
+  padding: 0;
+}
+
+.speed-selection-form li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.speed-selection-form {
+  display: flex;
+  justify-content: center;
+}
+
+.game-description {
+  position: absolute;
+  left: 15px;
+  top: -13px;
+  font-family: 'Comic Sans MS';
+  font-size: 15px;
+  color: whitesmoke;
+}
