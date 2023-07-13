@@ -1,6 +1,6 @@
 function checkLogin(login) {
   console.log(findNumbersInLogin(login).join(', '));
-  return /^\s*[A-Za-z](?!\.)(?:[A-Za-z](?!\.)|([0-9]|\.(?=\d))){1,9}$/.test(
+  return /^\s*[A-Za-z](?!\.)([A-Za-z](?!\.)|([0-9]|\.(?=\d))){1,9}\s*$/.test(
     login
   );
 }
