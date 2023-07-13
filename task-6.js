@@ -7,7 +7,7 @@ function checkLogin(login) {
 
 function findNumbersInLogin(login) {
   const numbersInLogin = [];
-  const pattern = /\d*(\.)?\d+/g;
+  const pattern = /\d+(\.\d+)?/g;
   let match;
 
   while ((match = pattern.exec(login)) !== null) {
