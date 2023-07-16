@@ -19,5 +19,5 @@ function findNumbersInLogin(login) {
 
 console.log(checkLogin('ee1.1ret3'));
 console.log(checkLogin('ee1*1ret3'));
-console.log(checkLogin('efr5.5545.6l6.ll8.8ll;l99.j5..2lgeg'));
-console.log(checkLogin('efr5.5545.6l6.ll8.8ll;l99.j5..2lgeg66 5 '));
+console.log(checkLogin('efr5.554 5.6l6.7ll8.8ll;l99.7j5.7 6.2lgeg'));
+console.log(checkLogin('efr5.5545.6l6.7ll8.8ll;l99.7j5.7 8.2lgeg66 5 '));

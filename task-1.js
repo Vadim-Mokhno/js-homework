@@ -1,13 +1,15 @@
 function unicodeUpperCase(inputString) {
-  return `String's${
-    /^\s*\p{Lowercase_Letter}/u.test(inputString) ? ' not ' : ' '
-  }starts with uppercase character`;
+  return `String${
+    /^\s*\p{Lowercase_Letter}/u.test(inputString)
+      ? ' does not start '
+      : ' starts '
+  }with uppercase character`;
 }
 
 function asciiUpperCase(inputString) {
-  return `String's${
-    /^\s*[a-z]/.test(inputString) ? ' not ' : ' '
-  }starts with uppercase character`;
+  return `String${
+    /^\s*[a-z]/.test(inputString) ? ' does not start ' : ' starts '
+  }with uppercase character`;
 }
 
 console.log(asciiUpperCase('     regexp'));
