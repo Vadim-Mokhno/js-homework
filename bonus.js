@@ -10,7 +10,7 @@ async function showNumbersAs() {
 }
 
 // Pomises version
-async function showNumbersPr() {
+function showNumbersPr() {
   let promiseDelay = 0;
   let time;
   for (let i = 0; i < 10; i++) {
