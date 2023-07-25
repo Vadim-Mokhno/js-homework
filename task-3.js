@@ -1,16 +1,18 @@
-function mul(...parameters) {
-  let productOfNumberParameters = 0;
-
-  for (const parameter of parameters) {
-    if (typeof parameter === 'number') {
-      productOfNumberParameters = productOfNumberParameters
-        ? productOfNumberParameters * parameter
-        : parameter;
-    }
-  }
-
-  return productOfNumberParameters;
-}
-console.log(mul(1, 'str', 2, 3, true)); // 6
-console.log(mul(null, 'str', false, true)); // 0
-console.log(mul(null, 'str', false, 1, 1, true, 1, 0)); // 0
+new Promise(function (resolve, reject) {
+  const userInput = Number(prompt('Enter a number:'));
+  Number.isNaN(userInput) ? reject(NaN) : resolve(userInput);
+})
+  .catch(function (error) {
+    return new Promise(function (resolve, reject) {
+      let userInput;
+      if (Number.isNaN(error)) {
+        while (Number.isNaN((userInput = Number(prompt('Enter a number:')))));
+      } else {
+        userInput = error;
+      }
+      resolve(userInput);
+    });
+  })
+  .then(function (result) {
+    console.log(result);
+  });

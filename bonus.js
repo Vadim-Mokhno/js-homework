@@ -1,24 +1,11 @@
-let server = {
-  data: 0,
-  convertToString: function (callback) {
-    callback(() => this.data + '');
-  },
-};
+const delayLimit = 3000;
+const delay = (i, time) =>
+  new Promise(resolve => setTimeout(() => resolve(i), time));
 
-let client = {
-  server: server,
-  result: '',
-  calc: function (data) {
-    this.server.data = data;
-    this.server.convertToString(this.notification());
-  },
-  notification: function () {
-    return callback => (this.result = callback());
-  },
-};
+async function showNumbers() {
+  for (let i = 0; i < 10; i++) {
+    console.log(await delay(i, Math.floor(Math.random() * (delayLimit + 1))));
+  }
+}
 
-client.calc(123);
-console.log(client.result); // "123"
-console.log(typeof client.result); // "string"
-console.log(client);
-console.log(server);
+showNumbers();

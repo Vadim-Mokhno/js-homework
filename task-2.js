@@ -1,14 +1,12 @@
-let data = {
-  names: ['Sam', 'Tom', 'Ray', 'Bob'],
-  ages: [20, 24, 22, 26],
+const calcArrProduct = function (arr) {
+  return new Promise((resolve, reject) => {
+    if (arr.filter(el => typeof el === 'number').length === arr.length) {
+      resolve(arr.reduce((product, el) => product * el, 1));
+    } else {
+      resolve('Error! Incorrect array!');
+    }
+  });
 };
 
-let {
-  names: [, name2, , name4],
-  ages: [, age2, , age4],
-} = data;
-
-console.log(name2); // "Tom"
-console.log(age2); // 24
-console.log(name4); // "Bob"
-console.log(age4); // 26
+calcArrProduct([3, 4, 5]).then(result => console.log(result)); // 60
+calcArrProduct([5, 'user2', 7, 12]).then(result => console.log(result)); // "Error! Incorrect array!"

@@ -1,12 +1,9 @@
-let names = {
-  first: 'Tom',
-  second: 'Sam',
-  third: 'Ray',
-  fourth: 'Bob',
+const getPromise = function (message, delay) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve(message), delay);
+  });
 };
 
-let { first: f, third: x, fifth = 'Name №5' } = names;
-
-console.log(f); // "Tom"
-console.log(x); // "Ray"
-console.log(fifth); // "Name №5"
+getPromise('test promise', 2000).then(function (data) {
+  console.log(data);
+});
