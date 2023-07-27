@@ -1,12 +1,11 @@
-const calcArrProduct = function (arr) {
-  return new Promise((resolve, reject) => {
-    if (arr.filter(el => typeof el === 'number').length === arr.length) {
-      resolve(arr.reduce((product, el) => product * el, 1));
-    } else {
-      resolve('Error! Incorrect array!');
-    }
-  });
-};
+const http = require('http');
+const { greetUser } = require('./personalmodule');
+const os = require('os');
+const server = http.createServer((req, res) => {
+  res.end(greetUser(os.userInfo().username));
+});
+const PORT = 5000;
 
-calcArrProduct([3, 4, 5]).then(result => console.log(result)); // 60
-calcArrProduct([5, 'user2', 7, 12]).then(result => console.log(result)); // "Error! Incorrect array!"
+server.listen(PORT, () => {
+  console.log(`Starting server on port ${PORT}`);
+});

@@ -1,0 +1,16 @@
+{
+  "name": "js-homework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bonus.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon task-2.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
